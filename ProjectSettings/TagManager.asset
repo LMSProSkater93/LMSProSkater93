@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 1354134483
+    locked: 0
+  - name: Background
+    uniqueID: 4200327213
+    locked: 0
+  - name: Player
+    uniqueID: 3182964587
+    locked: 0
+  - name: Foreground
+    uniqueID: 569470855
+    locked: 0
+  - name: Collisions
+    uniqueID: 606504333
+    locked: 0
