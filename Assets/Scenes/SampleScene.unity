@@ -133,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 239627892}
   - component: {fileID: 239627893}
+  - component: {fileID: 239627895}
+  - component: {fileID: 239627894}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -178,6 +180,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &239627894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239627891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb77323d5b52404bb4b4754ea16f0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <MovementData>k__BackingField: {fileID: 0}
+  currentVelocity: 3
+  <OnVelocityChanged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &239627895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239627891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc13ce55949e19845937a88187f0d61a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <onMovementKeyPressed>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 239627894}
+        m_TargetAssemblyTypeName: AgentMovement, Assembly-CSharp
+        m_MethodName: MoveAgent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
