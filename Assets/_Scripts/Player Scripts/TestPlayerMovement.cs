@@ -11,6 +11,8 @@ public class TestPlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    public MovementDataSO MovementData { get; set; }
+
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -21,8 +23,10 @@ public class TestPlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
+
+
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 }

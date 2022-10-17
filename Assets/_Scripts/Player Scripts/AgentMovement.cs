@@ -45,6 +45,7 @@ public class AgentMovement : MonoBehaviour
 
         return Mathf.Clamp(currentVelocity, 0, MovementData.maxSpeed);
     }
+
     private void FixedUpdate()
     {
         OnVelocityChanged?.Invoke(currentVelocity);
