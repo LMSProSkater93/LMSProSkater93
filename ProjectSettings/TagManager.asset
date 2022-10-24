@@ -50,9 +50,6 @@ TagManager:
   - name: Player
     uniqueID: 3182964587
     locked: 0
-  - name: Water
-    uniqueID: 2433786099
-    locked: 0
   - name: Foreground
     uniqueID: 569470855
     locked: 0
