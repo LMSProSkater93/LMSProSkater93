@@ -2076,6 +2076,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 965128841829380637, guid: 2a25911afa88b5243bf3b33de801b8d8, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 965128841829380637, guid: 2a25911afa88b5243bf3b33de801b8d8, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
@@ -2094,6 +2098,10 @@ PrefabInstance:
     - target: {fileID: 965128841829380637, guid: 2a25911afa88b5243bf3b33de801b8d8, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698197701156836822, guid: 2a25911afa88b5243bf3b33de801b8d8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 965128841829380639, guid: 2a25911afa88b5243bf3b33de801b8d8, type: 3}
@@ -2126,6 +2134,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  slopeCheckDistance: 0.5
+  cc: {fileID: 965128842000800882}
 --- !u!4 &965128842000800876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 965128841829380636, guid: 2a25911afa88b5243bf3b33de801b8d8, type: 3}
@@ -2148,3 +2158,19 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!70 &965128842000800882
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965128842000800873}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 1c896eb42a730da42a076f84f59dd06a, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02460152, y: 0}
+  m_Size: {x: 0.7539848, y: 1}
+  m_Direction: 0
