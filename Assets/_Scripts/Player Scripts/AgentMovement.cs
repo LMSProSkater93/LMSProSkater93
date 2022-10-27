@@ -7,47 +7,63 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class AgentMovement : MonoBehaviour
 {
+    private Rigidbody2D rb;
 
-    protected Rigidbody2D newRigidBody2D;
-
-    [field: SerializeField]
-    public MovementDataSO MovementData { get; set; }
-
-    [SerializeField] protected float currentVelocity = 3;
-
-    protected Vector2 movementDirection;
-
-    [field: SerializeField]
-    public UnityEvent<float> OnVelocityChanged { get; set; }
-
-    private void Awake()
+    private void Start()
     {
-        newRigidBody2D = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    public void MoveAgent(Vector2 movementInput)
+    private void Update()
     {
-        movementDirection = movementInput;
-        currentVelocity = CalculateSpeed(movementInput);
+        float dirX = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2( dirX * 7f, rb.velocity.y);
 
-    }
-
-    private float CalculateSpeed(Vector2 movementInput)
-    {
-        if (movementInput.magnitude > 0)
+        if (Input.GetButtonDown("Jump"))
         {
-            currentVelocity += MovementData.accelaration * Time.deltaTime;
+            rb.velocity = new Vector2(rb.velocity.x, 14f);
         }
-        else
-        {
-            currentVelocity -= MovementData.deaccelaration * Time.deltaTime;
-        }
+    }
+    //protected Rigidbody2D newRigidBody2D;
 
-        return Mathf.Clamp(currentVelocity, 0, MovementData.maxSpeed);
-    }
-    private void FixedUpdate()
-    {
-        OnVelocityChanged?.Invoke(currentVelocity);
-        newRigidBody2D.velocity = currentVelocity * movementDirection.normalized;
-    }
+    //[field: SerializeField]
+    //public MovementDataSO MovementData { get; set; }
+
+    //[SerializeField] protected float currentVelocity = 3;
+
+    //protected Vector2 movementDirection;
+
+    //[field: SerializeField]
+    //public UnityEvent<float> OnVelocityChanged { get; set; }
+
+    //private void Awake()
+    //{
+    //    newRigidBody2D = GetComponent<Rigidbody2D>();
+    //}
+
+    //public void MoveAgent(Vector2 movementInput)
+    //{
+    //    movementDirection = movementInput;
+    //    currentVelocity = CalculateSpeed(movementInput);
+
+    //}
+
+    //private float CalculateSpeed(Vector2 movementInput)
+    //{
+    //    if (movementInput.magnitude > 0)
+    //    {
+    //        currentVelocity += MovementData.accelaration * Time.deltaTime;
+    //    }
+    //    else
+    //    {
+    //        currentVelocity -= MovementData.deaccelaration * Time.deltaTime;
+    //    }
+
+    //    return Mathf.Clamp(currentVelocity, 0, MovementData.maxSpeed);
+    //}
+    //private void FixedUpdate()
+    //{
+    //    OnVelocityChanged?.Invoke(currentVelocity);
+    //    newRigidBody2D.velocity = currentVelocity * movementDirection.normalized;
+    //}
 }
