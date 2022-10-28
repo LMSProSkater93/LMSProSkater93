@@ -5,11 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - MyPizza
+  - MyDia
+  - MyEgg
+  - Aubergine
+  - Coin
+  - Meat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Water
   - Water
   - UI
   - Ground
@@ -45,14 +50,17 @@ TagManager:
   - name: Floor
     uniqueID: 1354134483
     locked: 0
-  - name: Background
+  - name: Sky
     uniqueID: 4200327213
     locked: 0
   - name: Player
     uniqueID: 3182964587
     locked: 0
-  - name: Foreground
+  - name: Level (foreground)
     uniqueID: 569470855
+    locked: 0
+  - name: Water
+    uniqueID: 1508839309
     locked: 0
   - name: Collisions
     uniqueID: 606504333
