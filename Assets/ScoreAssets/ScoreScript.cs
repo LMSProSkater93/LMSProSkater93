@@ -15,16 +15,22 @@ public class ScoreScript : MonoBehaviour
         scoreNum = 0;
         MyScoreText.text = "Score: " + scoreNum;
     }
-    //coliision coin
-    private void OnTriggerEnter2D(Collider2D pizzaCollision)
+    //coliision on pizza
+    private void OnTriggerEnter2D(Collider2D collisionOnItems)
     {
-        if (pizzaCollision.tag == "MyPizza")
+        if (collisionOnItems.tag == "MyPizza" || collisionOnItems.tag == "MyDia"
+            || collisionOnItems.tag == "MyEgg" || collisionOnItems.tag == "Aubergine"
+            || collisionOnItems.tag == "Coin" || collisionOnItems.tag == "Meat")
         {
             scoreNum++;
-            Destroy(pizzaCollision.gameObject);
+            Destroy(collisionOnItems.gameObject);
             MyScoreText.text = "Score " + scoreNum;
         }
+        //if (collisionOnItems.tag == "MyDia")
+        //{
+        //    scoreNum++;
+        //    Destroy(collisionOnItems.gameObject);
+        //    MyScoreText.text = "Score " + scoreNum;
+        //}
     }
-
-
 }
