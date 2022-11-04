@@ -10,6 +10,9 @@ TagManager:
   - Aubergine
   - Coin
   - Meat
+  - water
+  - Fire
+  - MagicEss
   layers:
   - Default
   - TransparentFX
@@ -53,11 +56,11 @@ TagManager:
   - name: Sky
     uniqueID: 4200327213
     locked: 0
-  - name: Player
-    uniqueID: 3182964587
-    locked: 0
   - name: Level (foreground)
     uniqueID: 569470855
+    locked: 0
+  - name: Player
+    uniqueID: 3182964587
     locked: 0
   - name: Water
     uniqueID: 1508839309

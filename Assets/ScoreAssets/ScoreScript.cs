@@ -26,11 +26,5 @@ public class ScoreScript : MonoBehaviour
             Destroy(collisionOnItems.gameObject);
             MyScoreText.text = "Score " + scoreNum;
         }
-        //if (collisionOnItems.tag == "MyDia")
-        //{
-        //    scoreNum++;
-        //    Destroy(collisionOnItems.gameObject);
-        //    MyScoreText.text = "Score " + scoreNum;
-        //}
     }
 }
