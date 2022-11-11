@@ -19,7 +19,7 @@ public class SceneManagementScript : MonoBehaviour
 
     void RestartCurrentLevel()
     {
-        if (HealthManagerScript.Health == 1)
+        if (HealthManagerScript.Health == 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
