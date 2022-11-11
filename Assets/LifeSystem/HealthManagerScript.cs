@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthManagerScript : MonoBehaviour
 {
     public static int Health = 3;
+
+    private bool dead;
 
     //create an array of img
     public Image[] life;
@@ -26,6 +29,11 @@ public class HealthManagerScript : MonoBehaviour
         {
             life[i].sprite = FullLife;
         }
+        if (dead == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Health = 3;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collisionItem)
@@ -36,6 +44,10 @@ public class HealthManagerScript : MonoBehaviour
             Health--;
             //Destroy(collisionWater.gameObject);
             //MyScoreText.text = "Score " + scoreNum;
+            if (Health < 1)
+            {
+                dead = true;
+            }
         }
     }
 
